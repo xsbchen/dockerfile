@@ -31,6 +31,7 @@ main(){
 
     echo -e -n "${COLOR_PINK}Linking toolchains...${COLOR_END}"
     ln -sf ~/am-toolchains/brcm-arm-hnd /opt/toolchains
+    ln -s /home/asuswrt-merlin.ng/release/src-rt-6.x.4708/toolchains/hndtools-arm-linux-2.6.36-uclibc-4.5.3 /opt/brcm-arm
     ln -sf bash /bin/sh
 
     mkdir -p /media/ASUSWRT/
@@ -44,6 +45,7 @@ main(){
     echo -e -n "${COLOR_PINK}Setup Environment...${COLOR_END}"
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/toolchains/crosstools-arm-gcc-5.3-linux-4.1-glibc-2.22-binutils-2.25/usr/lib
     export TOOLCHAIN_BASE=/opt/toolchains
+    export PATH=$PATH:/opt/brcm-arm/bin
     export PATH=$PATH:/opt/toolchains/crosstools-arm-gcc-5.3-linux-4.1-glibc-2.22-binutils-2.25/usr/bin
     export PATH=$PATH:/opt/toolchains/crosstools-aarch64-gcc-5.3-linux-4.1-glibc-2.22-binutils-2.25/usr/bin
     echo -e " ${COLOR_GREEN}done${COLOR_END}"
